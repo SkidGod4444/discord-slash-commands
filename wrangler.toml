@@ -2,6 +2,22 @@ name = "discord-slash-commands"
 main = "src/index.ts"
 compatibility_date = "2023-01-13"
 node_compat = true
+
 [vars]
+# you can add all your envs here so it will be directly added
 [triggers]
 crons = ["0 */12 * * *"]
+
+# [env.staging]
+# name = "discord-slash-commands-mine"
+# [env.staging.triggers]
+# crons = ["0 */12 * * *"]
+# [env.staging.vars]
+# DISCORD_TOKEN=your-staging-bot-token
+# DISCORD_PUBLIC_KEY=your-staging-bot-publick-key
+# DISCORD_APPLICATION_ID=your-staging-bot-id
+# DISCORD_GUILD_ID=your-staging-bot-server
+
+# BOT_PUBLIC_KEY=put-your-rsa-public-key
+# BOT_PRIVATE_KEY=put-your-rsa-private-key
+

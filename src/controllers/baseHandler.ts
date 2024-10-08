@@ -29,6 +29,7 @@ import {
   USER,
   REMOVE,
   GROUP_INVITE,
+  SCAN_SERVER,
 } from "../constants/commands";
 import { updateNickName } from "../utils/updateNickname";
 import { discordEphemeralResponse } from "../utils/discordEphemeralResponse";
@@ -44,6 +45,7 @@ import {
 import { DevFlag } from "../typeDefinitions/filterUsersByRole";
 import { kickEachUser } from "./kickEachUser";
 import { groupInvite } from "./groupInvite";
+import { scanServer } from "./scanServer";
 
 export async function baseHandler(
   message: discordMessageRequest,
@@ -65,6 +67,9 @@ export async function baseHandler(
         message.member.joined_at,
         env
       );
+    }
+    case getCommandName(SCAN_SERVER): {
+      return scanServer();
     }
     case getCommandName(MENTION_EACH): {
       const data = message.data?.options as Array<messageRequestDataOptions>;

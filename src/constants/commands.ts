@@ -3,6 +3,11 @@ export const HELLO = {
   description: "Replies with hello in the channel",
 };
 
+export const SCAN_SERVER = {
+  name: "scan-server",
+  description: "Scans the whole server for security reasons.",
+};
+
 export const VERIFY = {
   name: "verify",
   description:
